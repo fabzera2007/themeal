@@ -6,16 +6,24 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f8; /* Um tom de fundo ligeiramente mais suave */
+    background-color: #f4f6f8;
+    /* Um tom de fundo ligeiramente mais suave */
     color: #333;
-    line-height: 1.6; /* Melhorar a legibilidade geral */
+    line-height: 1.6;
+    /* Melhorar a legibilidade geral */
 }
 
 /* Header */
 .header_perfil {
     background-color: #E63946;
-    padding: 1.5rem 2rem; /* Padding ajustado */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-right: 2rem;
+    /* Mantém o padding direito */
+    padding-left: 1rem;
+    /* Padding ajustado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra mais sutil */
     color: rgb(5, 3, 3);
 }
 
@@ -29,10 +37,20 @@ body {
 
 /* Logo */
 .logo {
-    font-size: 1.75rem; /* Ligeiramente maior */
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 70px;
+
+}
+
+/* Estilos para a imagem do logo em si */
+.logo img {
+    height: auto;
+    width: auto;
+    max-height: 300px;
+
+    max-width: 100%;
+    object-fit: contain;
 }
 
 /* Navegação */
@@ -46,12 +64,15 @@ body {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 0; /* Adicionado padding vertical para melhor área de clique */
+    padding: 0.5rem 0;
+    /* Adicionado padding vertical para melhor área de clique */
     transition: color 0.3s;
-    position: relative; /* Para pseudo-elemento de hover */
+    position: relative;
+    /* Para pseudo-elemento de hover */
 }
 
-.perfil_main-nav a::after { /* Efeito de sublinhado sutil no hover */
+.perfil_main-nav a::after {
+    /* Efeito de sublinhado sutil no hover */
     content: '';
     position: absolute;
     width: 0;
@@ -76,7 +97,8 @@ body {
 .perfil_main-nav .page-select {
     font-weight: 600;
     /* background-color: #000000; Removido para consistência com o hover */
-    /* padding: 0.25rem 1rem; */ /* Ajustado pelo padding geral do 'a' */
+    /* padding: 0.25rem 1rem; */
+    /* Ajustado pelo padding geral do 'a' */
     /* line-height: 1.5rem; */
     /* display: inline-block; */
     color: #ffffff;
@@ -89,7 +111,8 @@ body {
     color: white;
     border: none;
     border-radius: 9999px;
-    padding: 0.5rem 1.25rem; /* Padding ajustado */
+    padding: 0.5rem 1.25rem;
+    /* Padding ajustado */
     line-height: 1.5rem;
     font-weight: 600;
     cursor: pointer;
@@ -102,11 +125,15 @@ body {
 }
 
 .logout-btn {
-    background-color: rgba(0,0,0,0.1); /* Fundo mais sutil para logout */
-    color: #ffffff; /* Texto branco */
-    border: 1px solid #ffffff; /* Borda branca */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Fundo mais sutil para logout */
+    color: #ffffff;
+    /* Texto branco */
+    border: 1px solid #ffffff;
+    /* Borda branca */
     border-radius: 9999px;
-    padding: 0.5rem 1.25rem; /* Padding ajustado */
+    padding: 0.5rem 1.25rem;
+    /* Padding ajustado */
     line-height: 1.5rem;
     font-weight: 600;
     cursor: pointer;
@@ -114,25 +141,33 @@ body {
 }
 
 .logout-btn:hover {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
 
 /* Conteúdo da Página */
 .container {
-    max-width: 1100px; /* Levemente aumentado para mais espaço */
-    margin: 2.5rem auto; /* Mais margem vertical */
-    padding: 0 1.5rem; /* Padding horizontal apenas, vertical controlado pelas seções */
+    max-width: 1100px;
+    /* Levemente aumentado para mais espaço */
+    margin: 2.5rem auto;
+    /* Mais margem vertical */
+    padding: 0 1.5rem;
+    /* Padding horizontal apenas, vertical controlado pelas seções */
 }
 
 /* Hero Section Styles (for index.html) */
 .hero {
-    background-color: #E63946; /* Cor primária para o hero */
-    color: #ffffff; /* Texto branco no hero */
-    padding: 5rem 2rem; /* Mais padding */
+    background-color: #E63946;
+    /* Cor primária para o hero */
+    color: #ffffff;
+    /* Texto branco no hero */
+    padding: 5rem 2rem;
+    /* Mais padding */
     text-align: center;
-    margin-bottom: 3rem; /* Mais espaço abaixo */
-    /* border-bottom: 1px solid #dde2e7; */ /* Removida borda inferior */
+    margin-bottom: 3rem;
+    /* Mais espaço abaixo */
+    /* border-bottom: 1px solid #dde2e7; */
+    /* Removida borda inferior */
 }
 
 .hero-content {
@@ -142,25 +177,32 @@ body {
 
 .hero-title {
     font-size: 3rem;
-    font-weight: 700; /* Mais peso */
-    color: #ffffff; /* Garantir cor branca */
-    margin-bottom: 1.5rem; /* Mais espaço */
+    font-weight: 700;
+    /* Mais peso */
+    color: #ffffff;
+    /* Garantir cor branca */
+    margin-bottom: 1.5rem;
+    /* Mais espaço */
 }
 
 .hero-text {
     font-size: 1.25rem;
-    color: #f0f0f0; /* Branco um pouco mais suave */
-    margin-bottom: 2.5rem; /* Mais espaço */
+    color: #f0f0f0;
+    /* Branco um pouco mais suave */
+    margin-bottom: 2.5rem;
+    /* Mais espaço */
     line-height: 1.7;
 }
 
-.hero .btn-ajustar { /* Botão CTA no Hero */
+.hero .btn-ajustar {
+    /* Botão CTA no Hero */
     background-color: #ffffff;
     color: #E63946;
     padding: 0.9rem 2.2rem;
     font-size: 1.1rem;
     font-weight: bold;
 }
+
 .hero .btn-ajustar:hover {
     background-color: #f0f0f0;
     color: #E63946;
@@ -172,38 +214,51 @@ body {
 /* Títulos das Seções Refinados */
 .titulo {
     font-size: 2.2rem;
-    color: #333740; /* Tom de cinza escuro mais profissional */
+    color: #333740;
+    /* Tom de cinza escuro mais profissional */
     font-weight: 600;
     margin-bottom: 2rem;
     padding-bottom: 0.75rem;
-    border-bottom: 2px solid #E63946; /* Borda com a cor primária */
-    text-align: left; /* Alinhamento padrão, pode ser sobrescrito */
+    border-bottom: 2px solid #E63946;
+    /* Borda com a cor primária */
+    text-align: left;
+    /* Alinhamento padrão, pode ser sobrescrito */
 }
 
-.perfil-card { /* Estilo base para cards de seção como "Junte-se" e o card de perfil */
+.perfil-card {
+    /* Estilo base para cards de seção como "Junte-se" e o card de perfil */
     align-items: center;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     padding: 2.5rem;
     background: #ffffff;
-    border-radius: 1rem; /* Bordas mais suaves */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07); /* Sombra sutil */
-    border: 1px solid #e0e4e8; /* Borda clara */
+    border-radius: 1rem;
+    /* Bordas mais suaves */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    /* Sombra sutil */
+    border: 1px solid #e0e4e8;
+    /* Borda clara */
     text-align: center;
-    margin-top: 2rem; /* Espaçamento para seções em card */
+    margin-top: 2rem;
+    /* Espaçamento para seções em card */
     margin-bottom: 2rem;
 }
 
-.perfil-card .titulo { /* Título dentro do perfil-card (ex: Junte-se à Comunidade) */
-    border-bottom: none; /* Sem borda inferior para títulos em cards */
+.perfil-card .titulo {
+    /* Título dentro do perfil-card (ex: Junte-se à Comunidade) */
+    border-bottom: none;
+    /* Sem borda inferior para títulos em cards */
     margin-bottom: 1rem;
-    font-size: 1.8rem; /* Ajuste de tamanho para contexto de card */
-    color: #E63946; /* Cor primária para destaque */
+    font-size: 1.8rem;
+    /* Ajuste de tamanho para contexto de card */
+    color: #E63946;
+    /* Cor primária para destaque */
 }
 
 .perfil-card .frase {
-    color: #555e68; /* Tom de cinza para texto secundário */
+    color: #555e68;
+    /* Tom de cinza para texto secundário */
     font-style: normal;
     margin-bottom: 1.5rem;
     max-width: 600px;
@@ -215,7 +270,7 @@ body {
     background: #ffffff;
     border-radius: 0.75rem;
     border: 1px solid #e0e4e8;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     overflow: hidden;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     display: flex;
@@ -224,14 +279,17 @@ body {
 
 .card-receita:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card-receita .thumb {
     width: 100%;
-    height: 200px; /* Altura fixa para consistência */
-    object-fit: cover; /* Garante que a imagem cubra sem distorcer */
-    /* border-bottom: 1px solid #e0e4e8; */ /* Opcional: separador sutil */
+    height: 200px;
+    /* Altura fixa para consistência */
+    object-fit: cover;
+    /* Garante que a imagem cubra sem distorcer */
+    /* border-bottom: 1px solid #e0e4e8; */
+    /* Opcional: separador sutil */
 }
 
 .card-receita .conteudo {
@@ -242,7 +300,8 @@ body {
 }
 
 .card-receita .titulo-receita {
-    font-size: 1.15rem; /* Tamanho de fonte ajustado */
+    font-size: 1.15rem;
+    /* Tamanho de fonte ajustado */
     font-weight: 600;
     color: #333740;
     margin-bottom: 0.6rem;
@@ -253,12 +312,14 @@ body {
     color: #555e68;
     line-height: 1.5;
     margin-bottom: 1rem;
-    flex-grow: 1; /* Empurra o link para baixo */
+    flex-grow: 1;
+    /* Empurra o link para baixo */
 }
 
 .card-receita .link {
     display: inline-block;
-    margin-top: auto; /* Alinha ao final do card */
+    margin-top: auto;
+    /* Alinha ao final do card */
     color: #E63946;
     font-weight: 600;
     text-decoration: none;
@@ -267,14 +328,16 @@ body {
 }
 
 .card-receita .link:hover {
-    color: #bf2d39; /* Tom mais escuro da cor primária */
+    color: #bf2d39;
+    /* Tom mais escuro da cor primária */
     text-decoration: underline;
 }
 
 /* ===== FIM DAS MODIFICAÇÕES PARA CONTAINER/SEÇÕES ===== */
 
 
-.avatar { /* Estilo para avatar na página de perfil */
+.avatar {
+    /* Estilo para avatar na página de perfil */
     flex-shrink: 0;
     text-align: center;
 }
@@ -287,11 +350,13 @@ body {
     object-fit: cover;
 }
 
-.info { /* Informações no card de perfil */
+.info {
+    /* Informações no card de perfil */
     text-align: center;
 }
 
-.nome { /* Nome do usuário no perfil */
+.nome {
+    /* Nome do usuário no perfil */
     font-size: 2.25rem;
     color: #000000;
     font-weight: 800;
@@ -306,16 +371,19 @@ body {
     flex-wrap: wrap;
 }
 
-.btn-ajustar { /* Botão principal de ajuste/CTA */
+.btn-ajustar {
+    /* Botão principal de ajuste/CTA */
     background-color: #000000;
     color: white;
-    padding: 0.7rem 1.8rem; /* Padding ajustado */
+    padding: 0.7rem 1.8rem;
+    /* Padding ajustado */
     border-radius: 9999px;
     font-weight: bold;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    text-transform: uppercase; /* Para um visual mais definido */
+    text-transform: uppercase;
+    /* Para um visual mais definido */
     font-size: 0.9rem;
     letter-spacing: 0.5px;
 }
@@ -325,7 +393,8 @@ body {
     transform: translateY(-2px) scale(1.03);
 }
 
-.btn-sair { /* Botão secundário/de cancelamento */
+.btn-sair {
+    /* Botão secundário/de cancelamento */
     background-color: #ff0a0ab9;
     color: #000000;
     padding: 0.7rem 1.8rem;
@@ -346,47 +415,58 @@ body {
 
 .metricas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Minmax ajustado */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    /* Minmax ajustado */
     gap: 1.5rem;
     margin-top: 2rem;
 }
 
-.dado { /* Card de métrica no perfil */
+.dado {
+    /* Card de métrica no perfil */
     background: #ffffff;
-    padding: 1.8rem; /* Mais padding */
+    padding: 1.8rem;
+    /* Mais padding */
     text-align: center;
     border-radius: 0.75rem;
     border: 1px solid #e0e4e8;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .valor {
     font-size: 2.5rem;
-    color: #E63946; /* Cor primária para os números */
-    font-weight: 700; /* Ajustado para bold */
+    color: #E63946;
+    /* Cor primária para os números */
+    font-weight: 700;
+    /* Ajustado para bold */
 }
 
 .legenda {
     color: #555e68;
-    font-size: 0.95rem; /* Tamanho ajustado */
-    margin-top: 0.25rem; /* Pequena margem */
+    font-size: 0.95rem;
+    /* Tamanho ajustado */
+    margin-top: 0.25rem;
+    /* Pequena margem */
 }
 
-.criacoes-section { /* Seção de "Minhas Criações" ou "Favoritas" */
+.criacoes-section {
+    /* Seção de "Minhas Criações" ou "Favoritas" */
     margin-top: 3rem;
 }
 
 .receita-grid {
     display: grid;
-    gap: 1.8rem; /* Espaçamento maior entre cards */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cards um pouco maiores */
+    gap: 1.8rem;
+    /* Espaçamento maior entre cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Cards um pouco maiores */
 }
 
 /* Estilo para o indicador de carregamento e mensagens */
 .message-box {
     text-align: center;
     padding: 2rem;
-    font-size: 1.1rem; /* Ajustado */
+    font-size: 1.1rem;
+    /* Ajustado */
     color: #6c757d;
     background-color: #f8f9fa;
     border-radius: 0.5rem;
@@ -395,13 +475,18 @@ body {
 
 .error-message {
     text-align: center;
-    padding: 1.5rem; /* Padding ajustado */
+    padding: 1.5rem;
+    /* Padding ajustado */
     font-size: 1.1rem;
-    color: #721c24; /* Cor de erro mais padrão */
-    background-color: #f8d7da; /* Fundo para erro */
-    border: 1px solid #f5c6cb; /* Borda para erro */
+    color: #721c24;
+    /* Cor de erro mais padrão */
+    background-color: #f8d7da;
+    /* Fundo para erro */
+    border: 1px solid #f5c6cb;
+    /* Borda para erro */
     border-radius: 0.5rem;
-    font-weight: 500; /* Peso da fonte */
+    font-weight: 500;
+    /* Peso da fonte */
 }
 
 /* Modal */
@@ -412,30 +497,43 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Overlay mais escuro */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Overlay mais escuro */
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    padding: 1rem; /* Padding para não colar nas bordas em telas pequenas */
+    padding: 1rem;
+    /* Padding para não colar nas bordas em telas pequenas */
 }
 
 .mdl-box {
     background-color: white;
-    border-radius: 0.75rem; /* Bordas consistentes */
+    border-radius: 0.75rem;
+    /* Bordas consistentes */
     padding: 2rem;
     width: 90%;
-    max-width: 550px; /* Max-width ajustado */
+    max-width: 550px;
+    /* Max-width ajustado */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    animation: fadeInModal 0.3s ease-out; /* Animação de entrada */
+    animation: fadeInModal 0.3s ease-out;
+    /* Animação de entrada */
 }
 
 @keyframes fadeInModal {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .mdl-title {
-    font-size: 1.6rem; /* Tamanho ajustado */
+    font-size: 1.6rem;
+    /* Tamanho ajustado */
     font-weight: 600;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -444,7 +542,8 @@ body {
 
 .tab {
     display: flex;
-    border-bottom: 1px solid #dee2e6; /* Borda mais sutil */
+    border-bottom: 1px solid #dee2e6;
+    /* Borda mais sutil */
     margin-bottom: 1.5rem;
 }
 
@@ -452,14 +551,19 @@ body {
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s; /* Transição mais rápida */
-    color: #6c757d; /* Cor inativa */
-    border-bottom: 3px solid transparent; /* Para efeito de seleção */
-    margin-bottom: -1px; /* Para alinhar com a borda do .tab */
+    transition: all 0.2s;
+    /* Transição mais rápida */
+    color: #6c757d;
+    /* Cor inativa */
+    border-bottom: 3px solid transparent;
+    /* Para efeito de seleção */
+    margin-bottom: -1px;
+    /* Para alinhar com a borda do .tab */
 }
 
 .tab-btn.act {
-    color: #E63946; /* Cor ativa */
+    color: #E63946;
+    /* Cor ativa */
     border-bottom-color: #E63946;
 }
 
@@ -467,12 +571,15 @@ body {
 .frm {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem; /* Espaçamento entre inputs */
+    gap: 1.25rem;
+    /* Espaçamento entre inputs */
 }
 
 .inp {
-    padding: 0.85rem; /* Mais padding interno */
-    border: 1px solid #ced4da; /* Borda padrão */
+    padding: 0.85rem;
+    /* Mais padding interno */
+    border: 1px solid #ced4da;
+    /* Borda padrão */
     border-radius: 0.5rem;
     font-size: 1rem;
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -481,10 +588,12 @@ body {
 .inp:focus {
     border-color: #E63946;
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(230, 57, 70, 0.25); /* Sombra no focus */
+    box-shadow: 0 0 0 0.2rem rgba(230, 57, 70, 0.25);
+    /* Sombra no focus */
 }
 
-textarea.inp { /* Especificidade para textareas */
+textarea.inp {
+    /* Especificidade para textareas */
     min-height: 100px;
     resize: vertical;
 }
@@ -499,27 +608,39 @@ textarea.inp { /* Especificidade para textareas */
 }
 
 @keyframes fadeInTab {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 
 .flex-row {
     display: flex;
     gap: 1rem;
-    justify-content: space-between; /* Ajuste para botões no modal */
+    justify-content: space-between;
+    /* Ajuste para botões no modal */
 }
+
 .flex-row button {
-    flex-grow: 1; /* Para os botões ocuparem espaço igual */
+    flex-grow: 1;
+    /* Para os botões ocuparem espaço igual */
 }
 
 
-.mt-4 { /* Classe utilitária de margem */
-    margin-top: 1.5rem; /* Ajustada */
+.mt-4 {
+    /* Classe utilitária de margem */
+    margin-top: 1.5rem;
+    /* Ajustada */
 }
 
-.msg { /* Mensagens de erro/sucesso */
-    padding: 0.9rem; /* Padding ajustado */
+.msg {
+    /* Mensagens de erro/sucesso */
+    padding: 0.9rem;
+    /* Padding ajustado */
     border-radius: 0.5rem;
     margin-bottom: 1.25rem;
     display: none;
@@ -542,24 +663,33 @@ textarea.inp { /* Especificidade para textareas */
 /* Busca */
 .srch {
     display: flex;
-    margin: 2.5rem auto; /* Margem ajustada */
-    max-width: 650px; /* Largura máxima ajustada */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra sutil */
+    margin: 2.5rem auto;
+    /* Margem ajustada */
+    max-width: 650px;
+    /* Largura máxima ajustada */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Sombra sutil */
     border-radius: 0.5rem;
-    overflow: hidden; /* Para conter os inputs arredondados */
+    overflow: hidden;
+    /* Para conter os inputs arredondados */
 }
 
 .srch-inp {
     flex: 1;
-    padding: 0.9rem 1.25rem; /* Padding aumentado */
+    padding: 0.9rem 1.25rem;
+    /* Padding aumentado */
     border: 1px solid #ced4da;
-    border-right: none; /* Remover borda direita para união com botão */
+    border-right: none;
+    /* Remover borda direita para união com botão */
     border-radius: 0.5rem 0 0 0.5rem;
     font-size: 1rem;
-    outline: none; /* Remover outline padrão */
+    outline: none;
+    /* Remover outline padrão */
 }
+
 .srch-inp:focus {
-    border-color: #E63946; /* Cor da borda no focus */
+    border-color: #E63946;
+    /* Cor da borda no focus */
 }
 
 
@@ -568,28 +698,35 @@ textarea.inp { /* Especificidade para textareas */
     color: white;
     border: none;
     border-radius: 0 0.5rem 0.5rem 0;
-    padding: 0 1.8rem; /* Padding ajustado */
+    padding: 0 1.8rem;
+    /* Padding ajustado */
     cursor: pointer;
     font-weight: 600;
     transition: background-color 0.3s;
 }
+
 .srch-btn:hover {
-    background-color: #bf2d39; /* Tom mais escuro no hover */
+    background-color: #bf2d39;
+    /* Tom mais escuro no hover */
 }
 
 /* Categorias */
 .cat-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem; /* Espaçamento ajustado */
+    gap: 0.75rem;
+    /* Espaçamento ajustado */
     justify-content: center;
     margin-bottom: 2.5rem;
 }
 
 .cat-item {
-    background-color: #e9ecef; /* Fundo mais suave */
-    color: #495057; /* Cor do texto */
-    padding: 0.6rem 1.2rem; /* Padding ajustado */
+    background-color: #e9ecef;
+    /* Fundo mais suave */
+    color: #495057;
+    /* Cor do texto */
+    padding: 0.6rem 1.2rem;
+    /* Padding ajustado */
     border-radius: 9999px;
     cursor: pointer;
     transition: all 0.3s;
@@ -597,10 +734,12 @@ textarea.inp { /* Especificidade para textareas */
     font-weight: 500;
 }
 
-.cat-item:hover, .cat-item.active {
+.cat-item:hover,
+.cat-item.active {
     background-color: #E63946;
     color: white;
-    box-shadow: 0 2px 8px rgba(230,57,70,0.3); /* Sombra sutil na ativação */
+    box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
+    /* Sombra sutil na ativação */
 }
 
 /* Loading */
@@ -609,17 +748,22 @@ textarea.inp { /* Especificidade para textareas */
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    min-height: 150px; /* Altura mínima para o loader */
+    min-height: 150px;
+    /* Altura mínima para o loader */
 }
 
 .loading::after {
     content: "";
-    width: 40px; /* Tamanho ajustado */
+    width: 40px;
+    /* Tamanho ajustado */
     height: 40px;
-    border: 4px solid #f0f0f0; /* Cor base do spinner */
-    border-top-color: #E63946; /* Cor de destaque do spinner */
+    border: 4px solid #f0f0f0;
+    /* Cor base do spinner */
+    border-top-color: #E63946;
+    /* Cor de destaque do spinner */
     border-radius: 50%;
-    animation: loading 0.8s linear infinite; /* Animação mais rápida */
+    animation: loading 0.8s linear infinite;
+    /* Animação mais rápida */
 }
 
 @keyframes loading {
@@ -632,21 +776,28 @@ textarea.inp { /* Especificidade para textareas */
 #recipe-content {
     max-height: 60vh;
     overflow-y: auto;
-    padding-right: 1rem; /* Para scrollbar */
-    text-align: left; /* Garantir alinhamento à esquerda do conteúdo */
+    padding-right: 1rem;
+    /* Para scrollbar */
+    text-align: left;
+    /* Garantir alinhamento à esquerda do conteúdo */
 }
-#recipe-content h3 { /* Estilo para subtítulos dentro do modal de receita */
+
+#recipe-content h3 {
+    /* Estilo para subtítulos dentro do modal de receita */
     font-size: 1.2rem;
     color: #333740;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
+
 #recipe-content ul {
     list-style-position: inside;
     padding-left: 0;
 }
-#recipe-content p, #recipe-content li {
+
+#recipe-content p,
+#recipe-content li {
     color: #555e68;
     margin-bottom: 0.5rem;
 }
@@ -658,13 +809,17 @@ textarea.inp { /* Especificidade para textareas */
         flex-direction: column;
         gap: 1rem;
     }
+
     .perfil_main-nav {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem 1rem; /* Espaçamento ajustado para mobile */
+        gap: 0.5rem 1rem;
+        /* Espaçamento ajustado para mobile */
     }
+
     .perfil_main-nav a {
-        padding: 0.5rem 0.75rem; /* Padding ajustado para mobile */
+        padding: 0.5rem 0.75rem;
+        /* Padding ajustado para mobile */
     }
 
     .container {
@@ -675,9 +830,11 @@ textarea.inp { /* Especificidade para textareas */
     .hero {
         padding: 3rem 1rem;
     }
+
     .hero-title {
         font-size: 2.2rem;
     }
+
     .hero-text {
         font-size: 1.1rem;
     }
@@ -689,57 +846,74 @@ textarea.inp { /* Especificidade para textareas */
     .perfil-card {
         padding: 1.5rem;
     }
+
     .perfil-card .titulo {
         font-size: 1.6rem;
     }
 
-    .nome { /* Nome do usuário no perfil em mobile */
+    .nome {
+        /* Nome do usuário no perfil em mobile */
         font-size: 1.75rem;
     }
 
     .botoes {
         flex-direction: column;
-        width: 100%; /* Botões ocupam largura total em mobile */
+        width: 100%;
+        /* Botões ocupam largura total em mobile */
     }
-    .botoes > .btn-ajustar, .botoes > .btn-sair {
+
+    .botoes>.btn-ajustar,
+    .botoes>.btn-sair {
         width: 100%;
         padding-top: 0.8rem;
         padding-bottom: 0.8rem;
     }
-    
+
     .srch {
         flex-direction: column;
-        box-shadow: none; /* Remover sombra no mobile se preferir */
+        box-shadow: none;
+        /* Remover sombra no mobile se preferir */
         border-radius: 0;
     }
+
     .srch-inp {
         border-radius: 0.5rem;
         margin-bottom: 0.5rem;
-        border-right: 1px solid #ced4da; /* Adicionar borda de volta */
+        border-right: 1px solid #ced4da;
+        /* Adicionar borda de volta */
     }
+
     .srch-btn {
         border-radius: 0.5rem;
-        padding: 0.85rem; /* Padding do botão de busca */
+        padding: 0.85rem;
+        /* Padding do botão de busca */
     }
 
     .receita-grid {
-        grid-template-columns: 1fr; /* Uma coluna em mobile */
+        grid-template-columns: 1fr;
+        /* Uma coluna em mobile */
         gap: 1.5rem;
     }
+
     .card-receita .thumb {
-        height: 180px; /* Ajustar altura da imagem do card */
+        height: 180px;
+        /* Ajustar altura da imagem do card */
     }
 
     .mdl-box {
         width: 95%;
         padding: 1.5rem;
     }
+
     .mdl-title {
         font-size: 1.4rem;
     }
-    .flex-row { /* Botões no modal em mobile */
+
+    .flex-row {
+        /* Botões no modal em mobile */
         flex-direction: column;
     }
+
     .flex-row button {
         width: 100%;
     }

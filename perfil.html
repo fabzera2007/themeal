@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu perfil</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header_perfil">
         <div class="header-content-wrapper">
-            <a href="index.html" class="logo">TheMeal</a>
+            <a href="index.html" class="logo"><img src="Imagens/logo.png" alt=""></a>
             <nav class="perfil_main-nav">
                 <a href="index.html">Início</a>
                 <a href="perfil.html" class="page-select">Meu Perfil</a>
@@ -25,7 +27,9 @@
     <div class="container">
         <div class="perfil-card">
             <div class="avatar">
-                <img id="user-avatar" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="Foto de Perfil" class="foto">
+                <img id="user-avatar"
+                    src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80"
+                    alt="Foto de Perfil" class="foto">
             </div>
 
             <div class="info">
@@ -94,7 +98,8 @@
                     <input type="password" class="inp" placeholder="Senha" id="login-password" required>
                     <button type="submit" class="btn-ajustar">Entrar</button>
                 </form>
-                <p class="mt-4" style="text-align: center;">Não tem uma conta? <a href="#" class="link" id="show-register">Cadastre-se</a></p>
+                <p class="mt-4" style="text-align: center;">Não tem uma conta? <a href="#" class="link"
+                        id="show-register">Cadastre-se</a></p>
             </div>
 
             <div class="tab-content" id="register-tab">
@@ -102,7 +107,13 @@
                     <input type="text" class="inp" placeholder="Nome de usuário" id="register-username" required>
                     <input type="email" class="inp" placeholder="Email" id="register-email" required>
                     <input type="password" class="inp" placeholder="Senha" id="register-password" required>
-                    <input type="password" class="inp" placeholder="Confirmar senha" id="register-confirm-password" required>
+                    <input type="password" class="inp" placeholder="Confirmar senha" id="register-confirm-password"
+                        required>
+
+                    <label for="register-avatar" style="margin-bottom: -0.5rem; font-size: 0.9em; color: #555;">Foto de
+                        Perfil (opcional, máx 2MB):</label>
+                    <input type="file" id="register-avatar" class="inp" accept="image/png, image/jpeg, image/gif">
+
                     <textarea class="inp" placeholder="Biografia (opcional)" id="register-bio"></textarea>
                     <div class="flex-row">
                         <button type="submit" class="btn-ajustar">Cadastrar</button>
@@ -145,4 +156,5 @@
     <script src="auth.js"></script>
     <script src="perfil.js"></script>
 </body>
+
 </html>
