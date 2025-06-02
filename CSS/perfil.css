@@ -1,0 +1,94 @@
+/* perfil.css - ESTILOS ESPECÍFICOS DA PÁGINA DE PERFIL */
+
+/* Estilos para o card de informações do usuário no perfil */
+/* A classe .perfil-card já tem estilos base em style.css */
+/* Aqui podem ir ajustes ou estilos para elementos internos específicos do perfil */
+
+.avatar {
+    flex-shrink: 0;
+    text-align: center;
+    margin-bottom: 1rem; /* Espaço abaixo do avatar */
+}
+
+.foto { /* Imagem do avatar */
+    width: 10rem; /* Tamanho maior para o perfil */
+    height: 10rem;
+    border-radius: 50%;
+    border: 5px solid #000000; /* Borda preta como no original */
+    object-fit: cover;
+    background-color: #e0e4e8; /* Cor de fundo caso a imagem não carregue */
+}
+
+.info { /* Container para nome, bio, botões no perfil */
+    text-align: center;
+    width: 100%;
+}
+
+.nome { /* Nome do usuário no perfil */
+    font-size: 2.25rem;
+    color: #333740;
+    font-weight: 700; /* Mais destaque */
+    margin-bottom: 0.5rem;
+}
+/* A classe .frase já tem estilo base em style.css via .perfil-card .frase */
+/* Os .botoes e .btn-ajustar/.btn-sair já têm estilos base em style.css */
+
+
+/* Métricas do Usuário */
+.metricas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem; /* Espaçamento ajustado */
+    margin-bottom: 2.5rem;
+}
+
+.dado { /* Card de cada métrica */
+    background: #ffffff;
+    padding: 1.8rem;
+    text-align: center;
+    border-radius: 0.75rem;
+    border: 1px solid #e0e4e8;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.valor { /* Número da métrica */
+    font-size: 2.5rem;
+    color: #E63946;
+    font-weight: 700;
+}
+
+.legenda { /* Texto abaixo do número da métrica */
+    color: #555e68;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+/* Seção de Criações/Favoritas/Recomendadas no Perfil */
+.criacoes-section {
+    margin-top: 3rem;
+}
+/* O .titulo e .receita-grid dentro desta seção já são estilizados pelo style.css comum */
+
+
+/* Responsividade para elementos específicos do perfil */
+@media (max-width: 768px) {
+    .foto { /* Avatar no mobile */
+        width: 7rem;
+        height: 7rem;
+    }
+    .nome { /* Nome do usuário no perfil em mobile */
+        font-size: 1.75rem;
+    }
+    .metricas-grid {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        gap: 1rem;
+    }
+    .dado {
+        padding: 1.25rem;
+    }
+    .valor {
+        font-size: 2rem;
+    }
+}
