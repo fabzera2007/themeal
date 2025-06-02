@@ -1,11 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>TheMeal - Site de Receitas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="header_perfil">
+        <div class="header-content-wrapper">
+            <a href="index.html" class="logo">TheMeal</a>
+            <nav class="perfil_main-nav">
+                <a href="index.html" class="page-select">Início</a>
+                <a href="perfil.html">Meu Perfil</a>
+                <a href="#">Explorar</a>
+                <a href="#">Categorias</a>
+                <a href="#">Sobre</a>
+                <button id="login-btn" class="login-btn">Entrar</button>
+                <button id="logout-btn" class="logout-btn" style="display: none;">Sair</button>
+            </nav>
+        </div>
+    </header>
     
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Descubra o Chef que Existe em Você</h1>
+            <p class="hero-text">Explore receitas deliciosas, compartilhe suas criações e conecte-se com outros amantes da culinária</p>
+            <button id="cta-btn" class="btn-ajustar">Começar Agora</button>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="srch">
+            <input type="text" id="search-input" class="srch-inp" placeholder="Buscar receitas...">
+            <button id="search-btn" class="srch-btn">Buscar</button>
+        </div>
+        
+        <div class="cat-list" id="categories-container">
+            <div class="loading"></div>
+        </div>
+    </div>
+    
+    <section class="container">
+        <h2 class="titulo">Receitas em Destaque</h2>
+        
+        <div class="receita-grid" id="featured-recipes">
+            <div class="loading"></div>
+        </div>
+    </section>
+    
+    <section class="container">
+        <div class="perfil-card">
+            <h2 class="titulo">Junte-se à Nossa Comunidade</h2>
+            <p class="frase">Compartilhe suas receitas, aprenda com outros chefs e faça parte da maior comunidade de culinária online.</p>
+            <div class="botoes">
+                <button id="join-btn" class="btn-ajustar">Criar Conta</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="header_perfil" style="margin-top: 2rem;">
+        <div class="header-content-wrapper" style="flex-direction: column; text-align: center;">
+            <p style="color: white; margin-bottom: 1rem;">&copy; 2025 TheMeal - Todos os direitos reservados</p>
+            <div class="perfil_main-nav" style="justify-content: center;">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mdl" id="auth-modal">
+        <div class="mdl-box">
+            <div class="tab">
+                <div class="tab-btn act" data-tab="login">Login</div>
+                <div class="tab-btn" data-tab="register">Cadastro</div>
+            </div>
+
+            <div class="msg" id="auth-message"></div>
+
+            <div class="tab-content act" id="login-tab">
+                <form class="frm" id="login-form">
+                    <input type="email" class="inp" placeholder="Email" id="login-email" required>
+                    <input type="password" class="inp" placeholder="Senha" id="login-password" required>
+                    <button type="submit" class="btn-ajustar">Entrar</button>
+                </form>
+                <p class="mt-4" style="text-align: center;">Não tem uma conta? <a href="#" class="link" id="show-register">Cadastre-se</a></p>
+            </div>
+
+            <div class="tab-content" id="register-tab">
+                <form class="frm" id="register-form">
+                    <input type="text" class="inp" placeholder="Nome de usuário" id="register-username" required>
+                    <input type="email" class="inp" placeholder="Email" id="register-email" required>
+                    <input type="password" class="inp" placeholder="Senha" id="register-password" required>
+                    <input type="password" class="inp" placeholder="Confirmar senha" id="register-confirm-password" required>
+                    <textarea class="inp" placeholder="Biografia (opcional)" id="register-bio"></textarea>
+                    <div class="flex-row">
+                        <button type="submit" class="btn-ajustar">Cadastrar</button>
+                        <button type="button" class="btn-sair" id="cancel-register">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdl" id="recipe-modal">
+        <div class="mdl-box" style="max-width: 800px;">
+            <h2 class="mdl-title" id="recipe-title">Carregando...</h2>
+            <div id="recipe-content">
+                <div class="loading"></div>
+            </div>
+            <div class="flex-row" style="justify-content: center; margin-top: 1.5rem;">
+                <button class="btn-sair" id="close-recipe">Fechar</button>
+                <button class="btn-ajustar" id="favorite-recipe">Favoritar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
