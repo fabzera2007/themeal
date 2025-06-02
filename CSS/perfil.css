@@ -1,0 +1,116 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e2e2e2;
+    color: #333;
+}
+
+/* Header */
+.header_perfil {
+    background-color: #E63946;
+    padding: 2rem 2rem;
+    box-shadow: 0 2px 4px rgba(187, 156, 156, 0.1);
+    color: rgb(5, 3, 3);
+}
+
+.header-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+/* Navegação */
+.perfil_main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.perfil_main-nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.perfil_main-nav a:hover{
+      background-color: #000000;
+    font-weight: 600;
+    /* semi-bold */
+    border-radius: 9999px;
+    /* pill shape */
+    padding: 0.25rem 1rem;
+    /* padding vertical e horizontal */
+    line-height: 1.5rem;
+    /* altura da linha para consistência */
+    display: inline-block;
+    color: #ffffff;
+}
+.perfil_main-nav .page-select {
+    background-color: #6a941b;
+    font-weight: 600;
+    /* semi-bold */
+    border-radius: 9999px;
+    /* pill shape */
+    padding: 0.25rem 1rem;
+    /* padding vertical e horizontal */
+    line-height: 1.5rem;
+    /* altura da linha para consistência */
+    display: inline-block;
+    color: #ffffff;
+}
+
+/* Botões */
+.nube-btn-login_header,
+.nube-btn-register_header {
+    background-color: white;
+    color: #004aad;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nube-btn-login_header:hover,
+.nube-btn-register_header:hover {
+    background-color: #ffdd57;
+    color: #00327a;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .header-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .perfil_main-nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nube-btn-login_header,
+    .nube-btn-register_header {
+        margin-left: 0;
+    }
+}
