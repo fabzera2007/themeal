@@ -5,25 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu perfil</title>
-     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/perfil.css">
 </head>
 
 <body>
     <header class="header_perfil">
         <div class="header-content-wrapper">
-            <a href="index.html" class="logo"><img src="Imagens/logo.png" alt=""></a>
-            <nav class="perfil_main-nav">
-                <a href="index.html">Início</a>
-                <a href="perfil.html" class="page-select">Meu Perfil</a>
-                <a href="#">Explorar</a>
-                <a href="#">Categorias</a>
-                <a href="#">Configurações</a>
-                <a href="#">Receitas aleatórias</a>
-                <button id="login-btn" class="login-btn">Entrar</button>
-                <button id="logout-btn" class="logout-btn" style="display: none;">Sair</button>
+            <a href="index.html" class="logo">
+                <img src="Imagens/logo.png" alt="TheMeal Logo"> </a>
+
+            <nav class="perfil_main-nav"> <a href="index.html" class="nav-link">Início</a>
+                <a href="#" class="nav-link">Explorar</a>
+                <a href="#" class="nav-link">Categorias</a>
+                <a href="#" class="nav-link">Sobre</a>
+                <a href="#" class="nav-link">Receitas aleatórias</a>
             </nav>
-        </div>
+
+            <a href="perfil.html" id="nav-profile-link" class="nav-icon-item" title="Meu Perfil" style="display: none;">
+                <img id="nav-user-avatar" src="" alt="Meu Perfil" class="nav-avatar-icon">
+            </a>
+            <a href="config.html" id="nav-settings-link" class="nav-icon-item" title="Configurações">
+                <img src="Imagens/engrenagem.png" alt="Configurações" class="nav-settings-icon">
+            </a>
+            <button id="login-btn" class="login-btn" style="display: block;">Entrar</button>
+            <h1 id="logout-btn" style="display: none;"></h1>
     </header>
 
     <div class="container">

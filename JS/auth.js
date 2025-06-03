@@ -416,3 +416,88 @@ document.addEventListener('DOMContentLoaded', () => {
     updateAuthUI();
     setupAuthModals(); // Configura todos os modais e formulários de autenticação
 });
+
+function updateAuthUI() {
+    const isUserLoggedIn = isLoggedIn();
+    const userData = getCurrentUser();
+    const defaultAvatar = 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80'; // Avatar padrão
+
+    // Elementos comuns (cabeçalho)
+    const loginBtnHeader = document.getElementById('login-btn');
+    const logoutBtnHeader = document.getElementById('logout-btn');
+
+    // NOVOS ELEMENTOS PARA OS ÍCONES NA NAVEGAÇÃO
+    const navProfileLink = document.getElementById('nav-profile-link');
+    const navUserAvatar = document.getElementById('nav-user-avatar');
+    // O ícone de configurações (#nav-settings-link) é sempre visível, não precisa de controle aqui
+    // a menos que você queira escondê-lo para usuários não logados.
+
+    if (loginBtnHeader && logoutBtnHeader) {
+        if (isUserLoggedIn) {
+            loginBtnHeader.style.display = 'none';
+            logoutBtnHeader.style.display = 'inline-block';
+
+            // Mostrar ícone do perfil e definir avatar na navegação
+            if (navProfileLink) navProfileLink.style.display = 'flex'; // Usar 'flex' se .nav-icon-item for flex
+            if (navUserAvatar && userData) navUserAvatar.src = userData.avatar || defaultAvatar;
+
+        } else {
+            loginBtnHeader.style.display = 'inline-block';
+            logoutBtnHeader.style.display = 'none';
+
+            // Esconder ícone do perfil na navegação
+            if (navProfileLink) navProfileLink.style.display = 'none';
+        }
+    }
+
+    // Elementos específicos da página de perfil (se existirem na página atual)
+    const userNameElem = document.getElementById('user-name');
+    const userBioElem = document.getElementById('user-bio');
+    const userAvatarElem = document.getElementById('user-avatar'); // Avatar principal da página de perfil
+    const editBtnProfile = document.getElementById('edit-btn');
+    const disconnectBtnProfile = document.getElementById('disconnect-btn');
+
+    if (userNameElem && userBioElem && userAvatarElem) {
+        if (isUserLoggedIn && userData) {
+            userNameElem.textContent = userData.name;
+            userBioElem.textContent = userData.bio;
+            userAvatarElem.src = userData.avatar || defaultAvatar;
+            if (editBtnProfile) editBtnProfile.style.display = 'inline-block';
+            if (disconnectBtnProfile) disconnectBtnProfile.style.display = 'inline-block';
+        } else {
+            userNameElem.textContent = 'Visitante';
+            userBioElem.textContent = 'Faça login para personalizar seu perfil.';
+            userAvatarElem.src = defaultAvatar;
+            if (editBtnProfile) editBtnProfile.style.display = 'none';
+            if (disconnectBtnProfile) disconnectBtnProfile.style.display = 'none';
+        }
+    }
+
+    // Lógica para destacar o link da página ativa (incluindo os novos ícones)
+    // Esta parte pode precisar de refinamento dependendo de como você quer que o 'page-select' funcione visualmente nos ícones.
+    const currentPage = window.location.pathname.split('/').pop(); // Pega o nome do arquivo atual (ex: "index.html")
+
+    document.querySelectorAll('.perfil_main-nav .nav-link, .perfil_main-nav .nav-icon-item').forEach(link => {
+        link.classList.remove('page-select');
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage) {
+            link.classList.add('page-select');
+        }
+        // Casos especiais para os ícones se o ID for mais confiável que o href para destacar
+        if (currentPage === 'perfil.html' && link.id === 'nav-profile-link') {
+            link.classList.add('page-select');
+        }
+        if (currentPage === 'config.html' && link.id === 'nav-settings-link') {
+            link.classList.add('page-select');
+        }
+        if (currentPage === 'index.html' && link.getAttribute('href') === 'index.html' && !link.id) { // Para o link "Início"
+            link.classList.add('page-select');
+        }
+
+    });
+    // Remove o page-select do link "Início" se outra página de ícone estiver ativa
+    if ((currentPage === 'perfil.html' || currentPage === 'config.html') && document.querySelector('.perfil_main-nav a[href="index.html"].nav-link')) {
+        document.querySelector('.perfil_main-nav a[href="index.html"].nav-link').classList.remove('page-select');
+    }
+
+}

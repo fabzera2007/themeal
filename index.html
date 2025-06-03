@@ -12,19 +12,26 @@
 <body>
     <header class="header_perfil">
         <div class="header-content-wrapper">
-            <a href="index.html" class="logo"><img src="Imagens/logo.png" alt=""></a>
-            <nav class="perfil_main-nav">
-                <a href="index.html" class="page-select">Início</a>
-                <a href="perfil.html">Meu Perfil</a>
-                <a href="#">Explorar</a>
-                <a href="#">Categorias</a>
-                <a href="config.html">Configurações</a>
-                <a href="#">Receitas aleatórias</a>
-                <button id="login-btn" class="login-btn">Entrar</button>
-                <button id="logout-btn" class="logout-btn" style="display: none;">Sair</button>
+            <a href="index.html" class="logo">
+                <img src="Imagens/logo.png" alt="TheMeal Logo"> </a>
+
+            <nav class="perfil_main-nav"> <a href="index.html" class="nav-link">Início</a>
+                <a href="#" class="nav-link">Explorar</a>
+                <a href="#" class="nav-link">Categorias</a>
+                <a href="#" class="nav-link">Sobre</a>
+                <a href="#" class="nav-link">Receitas aleatórias</a>
             </nav>
-        </div>
+            <button id="login-btn" class="login-btn" style="display: block;">Entrar</button>
+            <h1 id="logout-btn" style="display: none;"></h1>
     </header>
+    <div class="header-icons-fixos">
+        <a href="config.html" title="Configurações" id="nav-settings-link">
+            <img src="Imagens/engrenagem.png" alt="Configurações" class="nav-settings-icon">
+        </a>
+        <a href="perfil.html" id="nav-profile-link" title="Meu Perfil" style="display: none;">
+            <img id="nav-user-avatar" src="" alt="Meu Perfil" class="nav-avatar-icon">
+        </a>
+    </div>
 
     <section class="hero">
         <div class="hero-content">
