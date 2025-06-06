@@ -1,0 +1,437 @@
+/* dark-theme.css - NOVOS ESTILOS PARA CORRESPONDER À IMAGEM */
+
+/* 1. Estilos Gerais do Body e Tema
+-------------------------------------------------- */
+body {
+    background-color: #1E1E1E;
+    /* Fundo escuro */
+    color: #F0F0F0;
+    /* Cor de texto clara */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sobrescreve as configurações gerais do container para o novo layout */
+.container {
+    max-width: 1200px;
+    margin: 1.5rem auto;
+}
+
+/* Esconde a seção hero original */
+.hero {
+    display: none;
+}
+
+/* Esconde a seção "Junte-se", pois não está no novo design */
+.perfil-card {
+    display: none;
+}
+
+
+/* 2. Estilos do Cabeçalho
+-------------------------------------------------- */
+.header_perfil {
+    background-color: #252525;
+    /* Um tom de escuro um pouco mais claro para o cabeçalho */
+    border-bottom: 1px solid #333;
+    box-shadow: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.header-content-wrapper {
+    flex-direction: row;
+    /* Garante que o cabeçalho seja uma linha */
+}
+
+/* Ajusta o container do logo */
+.logo {
+    height: auto;
+}
+
+.logo img {
+    max-height: 45px;
+    /* Ajusta o tamanho do logo */
+}
+
+/* Área de Navegação e Usuário */
+.perfil_main-nav {
+    gap: 1.25rem;
+}
+
+/* Esconde os links de navegação originais que não estão no novo design */
+.perfil_main-nav a {
+    color: #E0E0E0;
+    /* Um branco um pouco mais suave para os links */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.perfil_main-nav a:hover {
+    color: #FFFFFF;
+    /* Branco total ao passar o mouse */
+}
+
+/* Deixa o link da página atual com a cor laranja */
+.perfil_main-nav a.page-select {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.perfil_main-nav a.page-select::after {
+    background-color: #FF6347;
+    /* Cor laranja que definimos antes */
+}
+
+/* Garante que o botão original de Login apareça corretamente quando deslogado */
+.login-btn {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #444;
+    border-color: #777;
+}
+
+/* Estilo para "Olá, Gabriel" e os ícones */
+.perfil_main-nav .user-greeting,
+.perfil_main-nav .icon-btn {
+    display: flex;
+    align-items: center;
+    color: #F0F0F0;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.perfil_main-nav .icon-btn {
+    background-color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.perfil_main-nav .icon-btn:hover {
+    background-color: #444;
+}
+
+.perfil_main-nav .icon-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #F0F0F0;
+}
+
+.logout-btn {
+    display: none !important;
+    /* Esconde o botão de logout original, será tratado pelo ícone de perfil */
+}
+
+
+/* 3. Seção do Título Principal e Pesquisa
+-------------------------------------------------- */
+.main-title-section {
+    text-align: center;
+    margin: 4rem auto 2.5rem;
+}
+
+.main-title-section .main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.main-title-section .main-subtitle {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+}
+
+/* Barra de Pesquisa */
+.srch {
+    display: flex;
+    max-width: 700px;
+    box-shadow: none;
+    border: 1px solid #444;
+    border-radius: 9999px;
+    /* Formato de pílula */
+    background-color: #252525;
+    overflow: visible;
+    padding-left: 1.25rem;
+}
+
+.srch-inp {
+    background: transparent;
+    border: none;
+    color: #F0F0F0;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.srch-inp::placeholder {
+    color: #888;
+}
+
+.srch-inp:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.srch-btn {
+    background-color: #E63946;
+    /* Cor laranja da imagem */
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    transition: background-color 0.3s;
+}
+
+.srch-btn:hover {
+    background-color: #bf2d39;
+}
+
+
+/* 4. Lista de Categorias
+-------------------------------------------------- */
+.cat-list {
+    margin: 2.5rem auto;
+    gap: 1rem;
+}
+
+.cat-item {
+    background-color: #333;
+    color: #F0F0F0;
+    font-weight: 500;
+    padding: 0.6rem 1.5rem;
+    border-radius: 9999px;
+}
+
+.cat-item:hover {
+    background-color: #444;
+    color: white;
+}
+
+.cat-item.active {
+    background-color: #E63946;
+    /* Cor laranja */
+    color: white;
+    box-shadow: none;
+}
+
+
+/* 5. Grade de Receitas e Cards
+-------------------------------------------------- */
+/* Esconde o título da seção original */
+section.container>.titulo {
+    display: none;
+}
+
+.receita-grid {
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card-receita {
+    background: #252525;
+    /* Fundo escuro do card */
+    border: 1px solid #333;
+    border-radius: 0.75rem;
+    box-shadow: none;
+    transition: transform 0.3s, border-color 0.3s;
+    position: relative;
+    /* Para a tag de categoria */
+}
+
+.card-receita:hover {
+    transform: translateY(-5px);
+    border-color: #555;
+}
+
+.card-receita .thumb-wrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+.card-receita .thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.card-receita .category-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card-receita .conteudo {
+    padding: 1.25rem;
+}
+
+.card-receita .titulo-receita {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 1.25rem;
+    /* Mais espaço abaixo do título */
+}
+
+/* Esconde a descrição e o link originais */
+.card-receita .desc,
+.card-receita .link {
+    display: none;
+}
+
+.card-receita .metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.card-receita .metadata-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card-receita .metadata-item svg {
+    width: 18px;
+    height: 18px;
+    fill: #a0a0a0;
+}
+
+.card-receita .cuisine-type {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
+
+
+/* 6. Ajustes Responsivos
+-------------------------------------------------- */
+@media (max-width: 768px) {
+    .main-title-section {
+        margin-top: 2rem;
+    }
+
+    .main-title-section .main-title {
+        font-size: 2rem;
+    }
+
+    .perfil_main-nav .user-greeting {
+        display: none;
+        /* Esconde o texto no mobile */
+    }
+
+    .srch {
+        flex-direction: column;
+        border-radius: 0.5rem;
+        border: none;
+        background-color: transparent;
+        padding-left: 0;
+    }
+
+    .srch-inp {
+        border-radius: 0.5rem;
+        background-color: #252525;
+        border: 1px solid #444;
+    }
+
+    .srch-btn {
+        margin-top: 0.75rem;
+        padding: 0.9rem;
+    }
+}
+
+/* ============================================= */
+/* == ESTILOS DA PÁGINA DE PERFIL (ADICIONAR) == */
+/* ============================================= */
+
+/* O card de perfil principal */
+.perfil-card-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    background: #252525;
+    /* Fundo escuro */
+    border-radius: 1rem;
+    border: 1px solid #333;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.perfil-card-profile .foto {
+    border-color: #FF6347;
+    /* Borda laranja */
+}
+
+.perfil-card-profile .nome {
+    color: #FFFFFF;
+}
+
+.perfil-card-profile .frase {
+    color: #a0a0a0;
+}
+
+/* Os botões dentro do card de perfil */
+.perfil-card-profile .btn-ajustar {
+    background-color: #FF6347;
+    color: white;
+}
+
+.perfil-card-profile .btn-ajustar:hover {
+    background-color: #E55A3F;
+}
+
+.perfil-card-profile .btn-sair {
+    background-color: #555;
+    color: #E0E0E0;
+}
+
+.perfil-card-profile .btn-sair:hover {
+    background-color: #666;
+}
+
+/* Métricas do usuário */
+.metricas-grid .dado {
+    background: #252525;
+    border: 1px solid #333;
+}
+
+.metricas-grid .valor {
+    color: #FF6347;
+    /* Números em laranja */
+}
+
+.metricas-grid .legenda {
+    color: #a0a0a0;
+}
+
+/* Títulos das seções ("Minhas Receitas Favoritas") */
+.criacoes-section .titulo {
+    color: #FFFFFF;
+    border-bottom: 2px solid #FF6347;
+    /* Borda laranja */
+    text-align: left;
+    padding-bottom: 0.75rem;
+}

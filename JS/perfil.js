@@ -1,5 +1,6 @@
 /**
  * perfil.js - Lógica específica da página de perfil (perfil.html)
+ * VERSÃO ATUALIZADA PARA CONSISTÊNCIA COM O NOVO DESIGN
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,23 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const followersCountElem = document.getElementById('followers-count');
     const followingCountElem = document.getElementById('following-count');
 
-    // Elementos do Modal de Receita (devem ter os mesmos IDs que em index.html)
+    // Elementos do Modal de Receita
     const recipeModal = document.getElementById('recipe-modal');
     const recipeTitle = document.getElementById('recipe-title');
     const recipeContent = document.getElementById('recipe-content');
     const closeRecipeBtn = document.getElementById('close-recipe');
     const favoriteRecipeBtn = document.getElementById('favorite-recipe');
 
-    let currentRecipeId = null; 
+    let currentRecipeId = null;
 
     // --- INICIALIZAÇÃO DA PÁGINA DE PERFIL ---
-    async function initProfilePage() {
-        // updateAuthUI() é chamado globalmente pelo auth.js no DOMContentLoaded.
-        // Se precisar de uma chamada específica aqui, pode adicionar, mas geralmente não é necessário
-        // se auth.js já estiver incluído e configurado para rodar no DOMContentLoaded.
-        // Contudo, para garantir que os dados do perfil sejam carregados após a UI de auth:
-        if (typeof updateAuthUI === "function") updateAuthUI(); // Garante que a UI de auth seja atualizada
-
+    function initProfilePage() {
+        if (typeof updateAuthUI === "function") updateAuthUI();
         loadUserMetrics();
         loadFavoriteRecipes();
         loadRecommendedRecipes();
@@ -71,26 +67,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadFavoriteRecipes() {
         if (!favoritesGrid) return;
-        const isUserLoggedIn = isLoggedIn(); 
-        const favoriteIds = getFavorites();  
+        const isUserLoggedIn = isLoggedIn();
+        const favoriteIds = getFavorites();
 
         if (!isUserLoggedIn || favoriteIds.length === 0) {
-            favoritesGrid.innerHTML = '<p class="message-box">Você ainda não adicionou receitas aos favoritos. Explore e adicione algumas!</p>';
+            favoritesGrid.innerHTML = '<div class="message-box" style="background: #252525; border-color: #444; color: #ccc;">Você ainda não adicionou receitas aos favoritos.</div>';
             return;
         }
         favoritesGrid.innerHTML = '<div class="loading"></div>';
         try {
-            const recipes = await getMealDetailsByIds(favoriteIds); // Da api.js
-            if (recipes.length === 0 && favoriteIds.length > 0) {
-                 favoritesGrid.innerHTML = '<p class="message-box error-message">Erro ao carregar algumas receitas favoritas. Elas podem ter sido removidas.</p>';
-            } else if (recipes.length === 0) {
-                favoritesGrid.innerHTML = '<p class="message-box">Nenhuma receita favorita para mostrar.</p>';
+            const recipes = await getMealDetailsByIds(favoriteIds);
+            if (recipes.length === 0) {
+                favoritesGrid.innerHTML = '<div class="message-box error-message">Nenhuma receita favorita para mostrar.</div>';
             } else {
                 displayRecipes(recipes, favoritesGrid);
             }
         } catch (error) {
             console.error('Erro ao carregar receitas favoritas:', error);
-            favoritesGrid.innerHTML = '<p class="message-box error-message">Erro ao carregar suas receitas favoritas. Tente novamente mais tarde.</p>';
+            favoritesGrid.innerHTML = '<div class="message-box error-message">Erro ao carregar suas receitas favoritas.</div>';
         }
     }
 
@@ -98,47 +92,55 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!recommendedGrid) return;
         recommendedGrid.innerHTML = '<div class="loading"></div>';
         try {
-            const recipes = await getMultipleRandomMeals(3); // Da api.js
+            const recipes = await getMultipleRandomMeals(3);
             if (recipes.length === 0) {
-                recommendedGrid.innerHTML = '<p class="message-box">Nenhuma recomendação disponível no momento.</p>';
+                recommendedGrid.innerHTML = '<p class="message-box">Nenhuma recomendação disponível.</p>';
                 return;
             }
             displayRecipes(recipes, recommendedGrid);
         } catch (error) {
             console.error('Erro ao carregar receitas recomendadas:', error);
-            recommendedGrid.innerHTML = '<p class="message-box error-message">Erro ao carregar recomendações. Tente novamente mais tarde.</p>';
+            recommendedGrid.innerHTML = '<p class="message-box error-message">Erro ao carregar recomendações.</p>';
         }
     }
 
     /**
-     * Exibe as receitas no container especificado usando as classes CSS atualizadas.
-     * (Função padronizada, igual à do index.js revisado)
+     * ATUALIZADA: Mesma função displayRecipes do index.js para consistência visual.
      */
     function displayRecipes(recipes, container) {
-        container.innerHTML = ''; 
+        container.innerHTML = '';
         if (!recipes || recipes.length === 0) return;
 
         recipes.forEach(recipe => {
             const card = document.createElement('div');
-            card.className = 'card-receita'; 
+            card.className = 'card-receita';
 
-            let descriptionText = '';
-            if (recipe.strInstructions && recipe.strInstructions.length > 100) {
-                descriptionText = recipe.strInstructions.substring(0, 100) + '...';
-            } else if (recipe.strArea) {
-                descriptionText = `Culinária ${recipe.strArea}`;
-            } else if (recipe.strCategory) {
-                descriptionText = `Categoria: ${recipe.strCategory}`;
-            } else {
-                descriptionText = 'Clique para ver mais detalhes.';
-            }
+            const time = Math.floor(Math.random() * 40) + 20;
+            const servings = Math.floor(Math.random() * 4) + 2;
+            const rating = (Math.random() * 1.5 + 3.5).toFixed(1);
 
             card.innerHTML = `
-                <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" class="thumb">
+                <div class="thumb-wrapper">
+                    <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" class="thumb">
+                    <div class="category-tag">${recipe.strCategory || 'Food'}</div>
+                </div>
                 <div class="conteudo">
                     <h3 class="titulo-receita">${recipe.strMeal}</h3>
-                    <p class="desc">${descriptionText}</p>
-                    <a href="#" class="link" onclick="event.preventDefault();">Ver Receita →</a>
+                    <div class="metadata">
+                        <div class="metadata-item">
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path></svg>
+                            <span>${time} min</span>
+                        </div>
+                        <div class="metadata-item">
+                            <svg viewBox="0 0 24 24"><path d="M16 0H8C6.9 0 6 .9 6 2v16c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zM8 18V2h8v16H8z"></path></svg>
+                            <span>${servings} porções</span>
+                        </div>
+                        <div class="metadata-item">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                            <span>${rating}</span>
+                        </div>
+                    </div>
+                    <div class="cuisine-type">${recipe.strArea || 'International'}</div>
                 </div>
             `;
             card.addEventListener('click', () => {
@@ -148,10 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /**
-     * Abre e preenche o modal com os detalhes de uma receita.
-     * (Função padronizada, igual à do index.js revisado)
-     */
     async function openRecipeDetails(id) {
         if (!recipeModal || !recipeTitle || !recipeContent) return;
         currentRecipeId = id;
@@ -160,14 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
         recipeContent.innerHTML = '<div class="loading"></div>';
 
         try {
-            const recipe = await getMealById(id); // Da api.js
+            const recipe = await getMealById(id);
             if (!recipe) {
                 recipeTitle.textContent = 'Erro';
                 recipeContent.innerHTML = '<p class="message-box error-message">Não foi possível carregar os detalhes da receita.</p>';
                 return;
             }
             recipeTitle.textContent = recipe.strMeal;
-            updateFavoriteButton(); 
+            updateFavoriteButton();
 
             const ingredients = [];
             for (let i = 1; i <= 20; i++) {
@@ -204,13 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * Atualiza a aparência do botão de favorito no modal.
-     * (Função padronizada, igual à do index.js revisado)
-     */
     function updateFavoriteButton() {
         if (!favoriteRecipeBtn || !currentRecipeId) return;
-        const isFav = isFavorite(currentRecipeId); // Da auth.js
+        const isFav = isFavorite(currentRecipeId);
         if (isFav) {
             favoriteRecipeBtn.textContent = 'Remover dos Favoritos';
             favoriteRecipeBtn.classList.remove('btn-ajustar');
@@ -222,13 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * Adiciona ou remove uma receita dos favoritos e atualiza a UI do perfil.
-     */
     function toggleFavorite() {
         if (!currentRecipeId) return;
-        const userIsLoggedIn = isLoggedIn(); // Da auth.js
-
+        const userIsLoggedIn = isLoggedIn();
         if (!userIsLoggedIn) {
             alert('Faça login para interagir com os favoritos!');
             if (recipeModal) recipeModal.style.display = 'none';
@@ -236,15 +226,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (authModal) authModal.style.display = 'flex';
             return;
         }
-
-        if (isFavorite(currentRecipeId)) { 
-            removeFavorite(currentRecipeId); 
+        if (isFavorite(currentRecipeId)) {
+            removeFavorite(currentRecipeId);
         } else {
-            addFavorite(currentRecipeId); 
+            addFavorite(currentRecipeId);
         }
-        updateFavoriteButton(); 
-
-        // ESPECÍFICO DO PERFIL: Recarrega as receitas favoritas e métricas
+        updateFavoriteButton();
         loadFavoriteRecipes();
         loadUserMetrics();
     }
