@@ -56,7 +56,8 @@ body {
 /* Navegação Comum */
 .perfil_main-nav {
     display: flex;
-    align-items: center; /* Centraliza os itens da nav entre si */
+    align-items: center;
+    /* Centraliza os itens da nav entre si */
     gap: 1.5rem;
     /* Se a nav parecer muito alta devido ao align-items: flex-start no wrapper,
        pode ser necessário adicionar um pequeno margin-top aqui para alinhar visualmente com o logo */
@@ -166,14 +167,16 @@ body {
     margin-bottom: 2rem;
 }
 
-.perfil-card .titulo { /* Título dentro de um .perfil-card */
+.perfil-card .titulo {
+    /* Título dentro de um .perfil-card */
     border-bottom: none;
     margin-bottom: 1rem;
     font-size: 1.8rem;
     color: #E63946;
 }
 
-.perfil-card .frase { /* Frase dentro de um .perfil-card */
+.perfil-card .frase {
+    /* Frase dentro de um .perfil-card */
     color: #555e68;
     font-style: normal;
     margin-bottom: 1.5rem;
@@ -242,7 +245,8 @@ body {
 }
 
 /* Botões genéricos (usados em vários lugares) */
-.botoes { /* Container para botões, usado no perfil-card */
+.botoes {
+    /* Container para botões, usado no perfil-card */
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -301,7 +305,8 @@ body {
     border: 1px dashed #ced4da;
 }
 
-.error-message { /* Usado para erros mais proeminentes */
+.error-message {
+    /* Usado para erros mais proeminentes */
     text-align: center;
     padding: 1.5rem;
     font-size: 1.1rem;
@@ -331,7 +336,9 @@ body {
 }
 
 @keyframes loading {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Estilos de Modal Comuns */
@@ -360,8 +367,15 @@ body {
 }
 
 @keyframes fadeInModal {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .mdl-title {
@@ -399,16 +413,21 @@ body {
     gap: 1.25rem;
 }
 
-.inp { /* Estilo para inputs, incluindo file e textarea */
+.inp {
+    /* Estilo para inputs, incluindo file e textarea */
     padding: 0.85rem;
     border: 1px solid #ced4da;
     border-radius: 0.5rem;
     font-size: 1rem;
     transition: border-color 0.3s, box-shadow 0.3s;
-    width: 100%; /* Garante que o input de arquivo ocupe a largura */
+    width: 100%;
+    /* Garante que o input de arquivo ocupe a largura */
 }
-.inp[type="file"] { /* Estilo específico para input de arquivo, se necessário */
-    padding: 0.6rem; /* Ajuste para melhor aparência */
+
+.inp[type="file"] {
+    /* Estilo específico para input de arquivo, se necessário */
+    padding: 0.6rem;
+    /* Ajuste para melhor aparência */
 }
 
 
@@ -433,8 +452,13 @@ textarea.inp {
 }
 
 @keyframes fadeInTab {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .flex-row {
@@ -477,7 +501,7 @@ textarea.inp {
     display: flex;
     margin: 2.5rem auto;
     max-width: 650px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0.5rem;
     overflow: hidden;
 }
@@ -491,6 +515,7 @@ textarea.inp {
     font-size: 1rem;
     outline: none;
 }
+
 .srch-inp:focus {
     border-color: #E63946;
 }
@@ -505,6 +530,7 @@ textarea.inp {
     font-weight: 600;
     transition: background-color 0.3s;
 }
+
 .srch-btn:hover {
     background-color: #bf2d39;
 }
@@ -532,16 +558,18 @@ textarea.inp {
 .cat-item.active {
     background-color: #E63946;
     color: white;
-    box-shadow: 0 2px 8px rgba(230,57,70,0.3);
+    box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
 }
 
 /* Conteúdo do Modal de Receita */
-#recipe-content { /* ID usado em ambos os HTMLs para o conteúdo do modal de receita */
+#recipe-content {
+    /* ID usado em ambos os HTMLs para o conteúdo do modal de receita */
     max-height: 60vh;
     overflow-y: auto;
     padding-right: 1rem;
     text-align: left;
 }
+
 #recipe-content h3 {
     font-size: 1.2rem;
     color: #333740;
@@ -549,10 +577,12 @@ textarea.inp {
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
+
 #recipe-content ul {
     list-style-position: inside;
     padding-left: 0;
 }
+
 #recipe-content p,
 #recipe-content li {
     color: #555e68;
@@ -564,7 +594,8 @@ textarea.inp {
     .header-content-wrapper {
         flex-direction: column;
         gap: 1rem;
-        align-items: center; /* Centraliza no mobile quando em coluna */
+        align-items: center;
+        /* Centraliza no mobile quando em coluna */
     }
 
     .perfil_main-nav {
@@ -572,6 +603,7 @@ textarea.inp {
         justify-content: center;
         gap: 0.5rem 1rem;
     }
+
     .perfil_main-nav a {
         padding: 0.5rem 0.75rem;
     }
@@ -579,42 +611,49 @@ textarea.inp {
     .container {
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
-        padding: 0 1rem; /* Menor padding horizontal no mobile */
+        padding: 0 1rem;
+        /* Menor padding horizontal no mobile */
     }
 
     .titulo {
         font-size: 1.8rem;
     }
 
-    .perfil-card { /* Ajuste para .perfil-card comum em mobile */
+    .perfil-card {
+        /* Ajuste para .perfil-card comum em mobile */
         padding: 1.5rem;
     }
+
     .perfil-card .titulo {
         font-size: 1.6rem;
     }
 
-    .botoes { /* Container de botões comum */
+    .botoes {
+        /* Container de botões comum */
         flex-direction: column;
         width: 100%;
     }
-    .botoes > .btn-ajustar,
-    .botoes > .btn-sair {
+
+    .botoes>.btn-ajustar,
+    .botoes>.btn-sair {
         width: 100%;
         padding-top: 0.8rem;
         padding-bottom: 0.8rem;
     }
-    
+
     .srch {
         flex-direction: column;
         box-shadow: none;
         border-radius: 0;
         margin: 1.5rem auto;
     }
+
     .srch-inp {
         border-radius: 0.5rem;
         margin-bottom: 0.5rem;
         border-right: 1px solid #ced4da;
     }
+
     .srch-btn {
         border-radius: 0.5rem;
         padding: 0.85rem;
@@ -628,6 +667,7 @@ textarea.inp {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+
     .card-receita .thumb {
         height: 180px;
     }
@@ -636,13 +676,136 @@ textarea.inp {
         width: 95%;
         padding: 1.5rem;
     }
+
     .mdl-title {
         font-size: 1.4rem;
     }
+
     .flex-row {
         flex-direction: column;
     }
+
     .flex-row button {
         width: 100%;
     }
+}
+
+.header-content-wrapper {
+    display: flex;
+    align-items: center; 
+    max-width: 1200px; /* O conteúdo fica dentro desta largura máxima */
+    margin: 0 auto;    /* Centraliza este container na página */
+    width: 100%;       /* Faz o wrapper tentar usar toda a largura disponível dentro do .header_perfil (considerando o padding do .header_perfil) */
+}
+
+.logo {
+    /* ... seus estilos de logo ... */
+    margin-right: auto; /* Empurra os próximos itens (nav e user-actions) para a direita */
+}
+
+.perfil_main-nav { /* Container dos links de texto da navegação */
+    display: flex;
+    align-items: center;
+    gap: 1.2rem; 
+    /* Não precisa de margin-right aqui, pois o .header-user-actions virá depois */
+}
+
+.header-user-actions { /* Container dos ícones de config, perfil e botões login/logout */
+    display: flex;
+    align-items: center;
+    gap: 0.9rem; 
+    margin-left: 1.5rem; /* Espaço entre os links de texto e este grupo de ações */
+}
+
+.perfil_main-nav a.nav-link { /* Estilo para os links de texto da navegação */
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+    position: relative;
+}
+.perfil_main-nav a.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+}
+.perfil_main-nav a.nav-link:hover::after,
+.perfil_main-nav a.nav-link.page-select::after {
+    width: 100%;
+}
+.perfil_main-nav a.nav-link:hover {
+    color: #ffffff;
+}
+.perfil_main-nav a.nav-link.page-select {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+
+/* Novo container para as ações do usuário à direita */
+.header-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Espaçamento entre os ícones e o botão de login/logout */
+    margin-left: 1.5rem; /* Espaço entre os links de navegação e este grupo de ações */
+}
+
+/* Estilos para os itens de navegação que são ícones (<a> tags) */
+.nav-icon-item {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem; /* Aumentado um pouco o padding para área de clique maior com ícones maiores */
+    line-height: 1; 
+}
+
+.nav-icon-item:hover {
+    background-color: rgba(255, 255, 255, 0.15); 
+    border-radius: 50%; 
+}
+
+.nav-icon-item img {
+    display: block; 
+}
+
+/* Ícone de avatar do usuário na navegação - MAIOR */
+.nav-avatar-icon {
+    height: 90px; /* AUMENTADO - ajuste conforme necessário */
+    width: 90px;  /* AUMENTADO - ajuste conforme necessário */
+    border-radius: 50%; 
+    object-fit: cover;
+    background-color: #ccc; 
+    border: 3px solid rgba(0, 0, 0, 0.5); 
+}
+
+/* Ícone de configurações na navegação - MAIOR */
+.nav-settings-icon {
+    height: 36px; /* AUMENTADO - ajuste conforme necessário */
+    width: 36px;  /* AUMENTADO - ajuste conforme necessário */
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%); /* Mantém branco */
+}
+
+/* Estilo para ícone da página ativa */
+.header-user-actions a.nav-icon-item.page-select {
+    background-color: rgba(0, 0, 0, 0.2); /* Exemplo: Círculo mais escuro para ícone ativo */
+    border-radius: 50%;
+}
+.header-user-actions a.nav-icon-item.page-select::after {
+   display: none; /* Sem sublinhado para ícones */
+}
+
+.header-icons-fixos {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 100;
 }
