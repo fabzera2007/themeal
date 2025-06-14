@@ -14,7 +14,7 @@ body {
 
 /* Header */
 .header_perfil {
-    background-color:   #E63946;
+    background-color: #E63946;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     padding-right: 2rem;
@@ -692,32 +692,40 @@ textarea.inp {
 
 .header-content-wrapper {
     display: flex;
-    align-items: center; 
-    max-width: 1200px; /* O conteúdo fica dentro desta largura máxima */
-    margin: 0 auto;    /* Centraliza este container na página */
-    width: 100%;       /* Faz o wrapper tentar usar toda a largura disponível dentro do .header_perfil (considerando o padding do .header_perfil) */
+    align-items: center;
+    max-width: 1200px;
+    /* O conteúdo fica dentro desta largura máxima */
+    margin: 0 auto;
+    /* Centraliza este container na página */
+    width: 100%;
+    /* Faz o wrapper tentar usar toda a largura disponível dentro do .header_perfil (considerando o padding do .header_perfil) */
 }
 
 .logo {
     /* ... seus estilos de logo ... */
-    margin-right: auto; /* Empurra os próximos itens (nav e user-actions) para a direita */
+    margin-right: auto;
+    /* Empurra os próximos itens (nav e user-actions) para a direita */
 }
 
-.perfil_main-nav { /* Container dos links de texto da navegação */
+.perfil_main-nav {
+    /* Container dos links de texto da navegação */
     display: flex;
     align-items: center;
-    gap: 1.2rem; 
+    gap: 1.2rem;
     /* Não precisa de margin-right aqui, pois o .header-user-actions virá depois */
 }
 
-.header-user-actions { /* Container dos ícones de config, perfil e botões login/logout */
+.header-user-actions {
+    /* Container dos ícones de config, perfil e botões login/logout */
     display: flex;
     align-items: center;
-    gap: 0.9rem; 
-    margin-left: 1.5rem; /* Espaço entre os links de texto e este grupo de ações */
+    gap: 0.9rem;
+    margin-left: 1.5rem;
+    /* Espaço entre os links de texto e este grupo de ações */
 }
 
-.perfil_main-nav a.nav-link { /* Estilo para os links de texto da navegação */
+.perfil_main-nav a.nav-link {
+    /* Estilo para os links de texto da navegação */
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: 500;
@@ -725,6 +733,7 @@ textarea.inp {
     transition: color 0.3s;
     position: relative;
 }
+
 .perfil_main-nav a.nav-link::after {
     content: '';
     position: absolute;
@@ -735,13 +744,16 @@ textarea.inp {
     background-color: #fff;
     transition: width 0.3s ease-in-out;
 }
+
 .perfil_main-nav a.nav-link:hover::after,
 .perfil_main-nav a.nav-link.page-select::after {
     width: 100%;
 }
+
 .perfil_main-nav a.nav-link:hover {
     color: #ffffff;
 }
+
 .perfil_main-nav a.nav-link.page-select {
     font-weight: 600;
     color: #ffffff;
@@ -752,52 +764,63 @@ textarea.inp {
 .header-user-actions {
     display: flex;
     align-items: center;
-    gap: 0.8rem; /* Espaçamento entre os ícones e o botão de login/logout */
-    margin-left: 1.5rem; /* Espaço entre os links de navegação e este grupo de ações */
+    gap: 0.8rem;
+    /* Espaçamento entre os ícones e o botão de login/logout */
+    margin-left: 1.5rem;
+    /* Espaço entre os links de navegação e este grupo de ações */
 }
 
 /* Estilos para os itens de navegação que são ícones (<a> tags) */
 .nav-icon-item {
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4rem; /* Aumentado um pouco o padding para área de clique maior com ícones maiores */
-    line-height: 1; 
+    padding: 0.4rem;
+    /* Aumentado um pouco o padding para área de clique maior com ícones maiores */
+    line-height: 1;
 }
 
 .nav-icon-item:hover {
-    background-color: rgba(255, 255, 255, 0.15); 
-    border-radius: 50%; 
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
 }
 
 .nav-icon-item img {
-    display: block; 
+    display: block;
 }
 
 /* Ícone de avatar do usuário na navegação - MAIOR */
 .nav-avatar-icon {
-    height: 90px; /* AUMENTADO - ajuste conforme necessário */
-    width: 90px;  /* AUMENTADO - ajuste conforme necessário */
-    border-radius: 50%; 
+    height: 90px;
+    /* AUMENTADO - ajuste conforme necessário */
+    width: 90px;
+    /* AUMENTADO - ajuste conforme necessário */
+    border-radius: 50%;
     object-fit: cover;
-    background-color: #ccc; 
-    border: 3px solid rgba(0, 0, 0, 0.5); 
+    background-color: #ccc;
+    border: 3px solid rgba(0, 0, 0, 0.5);
 }
 
 /* Ícone de configurações na navegação - MAIOR */
 .nav-settings-icon {
-    height: 36px; /* AUMENTADO - ajuste conforme necessário */
-    width: 36px;  /* AUMENTADO - ajuste conforme necessário */
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%); /* Mantém branco */
+    height: 36px;
+    /* AUMENTADO - ajuste conforme necessário */
+    width: 36px;
+    /* AUMENTADO - ajuste conforme necessário */
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+    /* Mantém branco */
 }
 
 /* Estilo para ícone da página ativa */
 .header-user-actions a.nav-icon-item.page-select {
-    background-color: rgba(0, 0, 0, 0.2); /* Exemplo: Círculo mais escuro para ícone ativo */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Exemplo: Círculo mais escuro para ícone ativo */
     border-radius: 50%;
 }
+
 .header-user-actions a.nav-icon-item.page-select::after {
-   display: none; /* Sem sublinhado para ícones */
+    display: none;
+    /* Sem sublinhado para ícones */
 }
 
 .header-icons-fixos {
@@ -808,4 +831,32 @@ textarea.inp {
     align-items: center;
     gap: 0.5rem;
     z-index: 100;
+}
+
+.card-receita .metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.card-receita .metadata-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card-receita .metadata-item svg {
+    width: 18px;
+    height: 18px;
+    fill: #a0a0a0;
+}
+
+.card-receita .cuisine-type {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
 }
