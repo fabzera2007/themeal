@@ -75,14 +75,34 @@
     </footer>
 
     <div class="mdl" id="auth-modal">
+    <div class="mdl-content">
+        <span class="mdl-close" id="auth-modal-close">&times;</span>
+
+        <div id="login-view">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Senha:</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            <p class="auth-switch">Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+        </div>
+
+        <div id="register-view" style="display:none;">
+            </div>
     </div>
-    <div class="mdl" id="recipe-modal">
-    </div>
+</div>
 
     <script src="JS/api.js"></script>
-    <script src="JS/auth.js"></script>
+    <script defer src="JS/auth.js"></script>
     <script src="JS/index.js"></script>
- 
+
 </body>
 
 </html>
