@@ -1,0 +1,14 @@
+
+.random-recipe-btn {
+    background: #E63946;
+    color: #ffffff;
+    border: none;
+    border-radius: 32px;
+    padding: 24px 48px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.random-recipe-btn:hover {
+    background: #6d5050;
+}
