@@ -68,15 +68,15 @@ function updateAuthUI() {
     const profileIconBtn = document.getElementById('profile-icon-btn');
 
     if (isUserLoggedIn) {
-        if(loginBtnHeader) loginBtnHeader.style.display = 'none';
-        if(userGreeting) { userGreeting.textContent = `Olá, ${userData.name.split(' ')[0]}`; userGreeting.style.display = 'flex'; }
-        if(logoutIconBtn) logoutIconBtn.style.display = 'flex';
-        if(profileIconBtn) profileIconBtn.style.display = 'flex';
+        if (loginBtnHeader) loginBtnHeader.style.display = 'none';
+        if (userGreeting) { userGreeting.textContent = `Olá, ${userData.name.split(' ')[0]}`; userGreeting.style.display = 'flex'; }
+        if (logoutIconBtn) logoutIconBtn.style.display = 'flex';
+        if (profileIconBtn) profileIconBtn.style.display = 'flex';
     } else {
-        if(loginBtnHeader) loginBtnHeader.style.display = 'inline-block';
-        if(userGreeting) userGreeting.style.display = 'none';
-        if(logoutIconBtn) logoutIconBtn.style.display = 'none';
-        if(profileIconBtn) profileIconBtn.style.display = 'none';
+        if (loginBtnHeader) loginBtnHeader.style.display = 'inline-block';
+        if (userGreeting) userGreeting.style.display = 'none';
+        if (logoutIconBtn) logoutIconBtn.style.display = 'none';
+        if (profileIconBtn) profileIconBtn.style.display = 'none';
     }
 
     const userNameElem = document.getElementById('user-name');
@@ -89,14 +89,14 @@ function updateAuthUI() {
             userNameElem.textContent = userData.name;
             userBioElem.textContent = userData.bio;
             userAvatarElem.src = userData.avatar;
-            if(editBtnProfile) editBtnProfile.style.display = 'inline-block';
-            if(disconnectBtnProfile) disconnectBtnProfile.style.display = 'inline-block';
+            if (editBtnProfile) editBtnProfile.style.display = 'inline-block';
+            if (disconnectBtnProfile) disconnectBtnProfile.style.display = 'inline-block';
         } else {
             userNameElem.textContent = 'Visitante';
             userBioElem.textContent = 'Faça login para personalizar seu perfil.';
             userAvatarElem.src = 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80';
-            if(editBtnProfile) editBtnProfile.style.display = 'none';
-            if(disconnectBtnProfile) disconnectBtnProfile.style.display = 'none';
+            if (editBtnProfile) editBtnProfile.style.display = 'none';
+            if (disconnectBtnProfile) disconnectBtnProfile.style.display = 'none';
         }
     }
 }
@@ -107,7 +107,7 @@ function setupAuthModals() {
     const authModal = document.getElementById('auth-modal');
     const loginBtnHeader = document.getElementById('login-btn');
     const loginForm = document.getElementById('login-form');
-    
+
     // NOVO: Adiciona o listener para o novo botão de logout no cabeçalho
     const logoutIconBtn = document.getElementById('logout-icon-btn');
     if (logoutIconBtn) {
@@ -117,7 +117,7 @@ function setupAuthModals() {
             window.location.href = 'index.html'; // Redireciona para a home
         });
     }
-    
+
     // O resto da função continua igual...
     const disconnectBtnProfile = document.getElementById('disconnect-btn');
     if (disconnectBtnProfile) {
@@ -139,20 +139,88 @@ function setupAuthModals() {
             e.preventDefault();
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
+            const msgDiv = document.getElementById('login-msg'); // Pega o div de mensagem
+
             try {
                 loginUser(email, password);
                 location.reload();
             } catch (error) {
-                alert(error.message);
+                // Em vez de alert(), exibe a mensagem no modal
+                msgDiv.textContent = error.message;
+                msgDiv.className = 'msg msg-err'; // Adiciona as classes para estilo de erro
+                msgDiv.style.display = 'block';
             }
         });
     }
-
     // ... (resto do código de setup dos modais sem alteração)
 }
+
+// Alternância entre login e cadastro
+const openRegisterLink = document.getElementById('open-register');
+const backToLoginLink = document.getElementById('back-to-login');
+const loginFormWrapper = document.getElementById('login-form').parentElement;
+const registerFormWrapper = document.getElementById('register-form');
+
+if (openRegisterLink) {
+    openRegisterLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginFormWrapper.style.display = 'none';
+        registerFormWrapper.style.display = 'block';
+    });
+}
+
+if (backToLoginLink) {
+    backToLoginLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        registerFormWrapper.style.display = 'none';
+        loginFormWrapper.style.display = 'block';
+    });
+}
+
+// Formulário de cadastro
+const registerForm = document.getElementById('form-register');
+if (registerForm) {
+    registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = document.getElementById('register-username').value;
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+        const msgDiv = document.getElementById('register-msg');
+
+        try {
+            registerUser(username, email, password);
+            msgDiv.textContent = 'Cadastro realizado com sucesso!';
+            msgDiv.className = 'msg msg-suc';
+            msgDiv.style.display = 'block';
+            // Após cadastro, volta para o login
+            setTimeout(() => {
+                registerFormWrapper.style.display = 'none';
+                loginFormWrapper.style.display = 'block';
+                msgDiv.style.display = 'none';
+            }, 1500);
+        } catch (error) {
+            msgDiv.textContent = error.message;
+            msgDiv.className = 'msg msg-err';
+            msgDiv.style.display = 'block';
+        }
+    });
+}
+
 
 // --- Inicialização ---
 document.addEventListener('DOMContentLoaded', () => {
     updateAuthUI();
     setupAuthModals();
+});
+document.addEventListener('DOMContentLoaded', () => {
+    // Já existe: setupAuthModals() e updateAuthUI();
+
+    const closeModalBtn = document.getElementById('auth-modal-close');
+    const authModal = document.getElementById('auth-modal');
+
+    if (closeModalBtn && authModal) {
+        closeModalBtn.addEventListener('click', () => {
+            authModal.style.display = 'none';
+        });
+    }
 });

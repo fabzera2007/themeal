@@ -1,18 +1,20 @@
-
 /* --- TEMA ESCURO --- */
 body.dark-theme {
     background: #232323 !important;
     color: #fff !important;
 }
+
 body.dark-theme .header_perfil {
     background: #E63946 !important;
     color: #fff !important;
 }
+
 body.dark-theme main,
 body.dark-theme .container {
     background: #232323 !important;
     color: #fff !important;
 }
+
 body.dark-theme .perfil-card,
 body.dark-theme .card-receita,
 body.dark-theme .config-card,
@@ -22,19 +24,101 @@ body.dark-theme .error-message {
     color: #fff !important;
     border-color: #333 !important;
 }
+
 body.dark-theme .titulo,
 body.dark-theme .perfil-card .titulo,
 body.dark-theme .card-receita .titulo-receita {
     color: #fff !important;
     border-bottom-color: #E63946 !important;
 }
+
 body.dark-theme .perfil_main-nav a,
 body.dark-theme .perfil_main-nav .page-select {
     color: #fff !important;
 }
+
 body.dark-theme .login-btn,
 body.dark-theme .logout-btn {
     background: #232323 !important;
     color: #fff !important;
     border: 1px solid #fff !important;
+}
+
+/* --- Estilos do Modal de Autenticação no Tema Escuro --- */
+body.dark-theme .mdl-box {
+    background-color: #2d2d2d !important;
+    border: 1px solid #444 !important;
+}
+
+body.dark-theme .mdl-title {
+    color: #fff !important;
+}
+
+body.dark-theme .inp {
+    background-color: #3a3a3a !important;
+    border-color: #555 !important;
+    color: #fff !important;
+}
+
+body.dark-theme .inp::placeholder {
+    color: #aaa;
+}
+
+body.dark-theme .inp:focus {
+    border-color: #E63946 !important;
+    box-shadow: 0 0 0 0.2rem rgba(230, 57, 70, 0.4) !important;
+}
+
+body.dark-theme .btn-ajustar {
+    background: #E63946 !important;
+    color: #fff !important;
+}
+
+body.dark-theme .btn-ajustar:hover {
+    background: #bf2d39 !important;
+}
+
+body.dark-theme p a {
+    color: #ffb4a2 !important;
+}
+/* --- Estilos do Modal de Autenticação no Tema Escuro --- */
+body.dark-theme .mdl-box {
+    background-color: #2d2d2d !important;
+    border: 1px solid #444 !important;
+}
+
+body.dark-theme .mdl-title {
+    color: #fff !important;
+}
+
+body.dark-theme .mdl-close:hover {
+    color: #fff !important;
+}
+
+body.dark-theme .inp {
+    background-color: #3a3a3a !important;
+    border-color: #555 !important;
+    color: #fff !important;
+}
+
+body.dark-theme .inp::placeholder {
+    color: #aaa;
+}
+
+body.dark-theme .inp:focus {
+    border-color: #E63946 !important;
+    box-shadow: 0 0 0 0.2rem rgba(230, 57, 70, 0.4) !important;
+}
+
+body.dark-theme .btn-ajustar {
+    background: #E63946 !important;
+    color: #fff !important;
+}
+
+body.dark-theme .btn-ajustar:hover {
+    background: #bf2d39 !important;
+}
+
+body.dark-theme p a {
+    color: #ffb4a2 !important;
 }

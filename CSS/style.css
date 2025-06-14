@@ -860,3 +860,32 @@ textarea.inp {
     padding-top: 1rem;
     border-top: 1px solid #333;
 }
+
+/*
+/* ESTILOS PARA O MODAL E BOTÃO DE FECHAR - ADICIONAR AO FINAL DE STYLE.CSS */
+/* ----------------------------------------------------------------------- */
+
+.mdl-box {
+    position: relative;
+    /* Necessário para posicionar o botão de fechar */
+}
+
+.mdl-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.mdl-close:hover {
+    color: #333;
+    transform: scale(1.1);
+}

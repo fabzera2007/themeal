@@ -75,29 +75,43 @@
     </footer>
 
     <div class="mdl" id="auth-modal">
-    <div class="mdl-content">
-        <span class="mdl-close" id="auth-modal-close">&times;</span>
+        <div class="mdl-box">
+            <button class="mdl-close" id="auth-modal-close">&times;</button>
 
-        <div id="login-view">
-            <h2>Login</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="login-email">Email:</label>
-                    <input type="email" id="login-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Senha:</label>
-                    <input type="password" id="login-password" required>
-                </div>
-                <button type="submit" class="btn">Entrar</button>
-            </form>
-            <p class="auth-switch">Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
-        </div>
-
-        <div id="register-view" style="display:none;">
+            <!-- LOGIN FORM -->
+            <div id="login-form-wrapper">
+                <h2 class="mdl-title">Login</h2>
+                <form id="login-form" class="frm">
+                    <input type="email" id="login-email" class="inp" placeholder="Seu email" required>
+                    <input type="password" id="login-password" class="inp" placeholder="Sua senha" required>
+                    <div id="login-msg" class="msg"></div>
+                    <button type="submit" class="btn-ajustar mt-4">Entrar</button>
+                </form>
+                <p style="text-align: center; margin-top: 1.5rem; color: #6c757d;">
+                    Não tem uma conta? <a href="#" id="open-register"
+                        style="color: #E63946; font-weight: 600;">Cadastre-se</a>
+                </p>
             </div>
+
+            <!-- REGISTER FORM -->
+            <div id="register-form" style="display: none;">
+                <h2 class="mdl-title">Cadastro</h2>
+                <form id="form-register" class="frm">
+                    <input type="text" id="register-username" class="inp" placeholder="Seu nome" required>
+                    <input type="email" id="register-email" class="inp" placeholder="Seu email" required>
+                    <input type="password" id="register-password" class="inp" placeholder="Sua senha" required>
+                    <div id="register-msg" class="msg"></div>
+                    <button type="submit" class="btn-ajustar mt-4">Cadastrar</button>
+                </form>
+                <p style="text-align: center; margin-top: 1rem;">
+                    Já tem conta? <a href="#" id="back-to-login" style="color: #E63946; font-weight: 600;">Voltar para
+                        login</a>
+                </p>
+            </div>
+        </div>
     </div>
-</div>
+
+
 
     <script src="JS/api.js"></script>
     <script defer src="JS/auth.js"></script>
