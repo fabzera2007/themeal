@@ -435,3 +435,82 @@ section.container>.titulo {
     text-align: left;
     padding-bottom: 0.75rem;
 }
+
+/* --- TEMA CLARO (padrão) --- */
+body {
+    background: #f4f6f8 !important;
+    color: #333 !important;
+}
+.header_perfil {
+    background: #E63946 !important;
+    color: #fff !important;
+}
+main, .container {
+    background: #f4f6f8 !important;
+    color: #333 !important;
+}
+.perfil-card,
+.card-receita,
+.config-card,
+.message-box,
+.error-message {
+    background: #fff !important;
+    color: #333 !important;
+    border-color: #e0e4e8 !important;
+}
+.titulo,
+.perfil-card .titulo,
+.card-receita .titulo-receita {
+    color: #E63946 !important;
+    border-bottom-color: #E63946 !important;
+}
+.perfil_main-nav a,
+.perfil_main-nav .page-select {
+    color: #fff !important;
+}
+.login-btn,
+.logout-btn {
+    background: #000 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+/* --- TEMA ESCURO --- */
+body.dark-theme {
+    background: #232323 !important;
+    color: #fff !important;
+}
+body.dark-theme .header_perfil {
+    background: #E63946 !important;
+    color: #fff !important;
+}
+body.dark-theme main,
+body.dark-theme .container {
+    background: #232323 !important;
+    color: #fff !important;
+}
+body.dark-theme .perfil-card,
+body.dark-theme .card-receita,
+body.dark-theme .config-card,
+body.dark-theme .message-box,
+body.dark-theme .error-message {
+    background: #292929 !important;
+    color: #fff !important;
+    border-color: #333 !important;
+}
+body.dark-theme .titulo,
+body.dark-theme .perfil-card .titulo,
+body.dark-theme .card-receita .titulo-receita {
+    color: #fff !important;
+    border-bottom-color: #E63946 !important;
+}
+body.dark-theme .perfil_main-nav a,
+body.dark-theme .perfil_main-nav .page-select {
+    color: #fff !important;
+}
+body.dark-theme .login-btn,
+body.dark-theme .logout-btn {
+    background: #232323 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}

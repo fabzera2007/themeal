@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurações</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/config.css">
+    <link rel="stylesheet" href="CSS/dark-theme.css">
 </head>
 <body>
     <header class="header_perfil">
@@ -14,9 +15,7 @@
             <nav class="perfil_main-nav">
                 <a href="index.html">Início</a>
                 <a href="perfil.html">Meu Perfil</a>
-                <a href="#">Explorar</a>
-                <a href="#">Categorias</a>
-                <a href="config.html"class="page-select">Configurações</a>
+                <a href="config.html" class="page-select">Configurações</a>
                 <a href="aleatorias.html">Receitas aleatórias</a>
                 <button id="login-btn" class="login-btn">Entrar</button>
                 <button id="logout-btn" class="logout-btn" style="display: none;">Sair</button>
@@ -24,15 +23,27 @@
         </div>
     </header>
     
-     <footer>
-        <div class="config_square">
-            <h2>Theme</h2>
-            <h1>Apagar conta</h1>
-            <h2>Editar Perfil</h2>
-
+    <main>
+        <div class="config-options">
+            <div class="config-card">
+                <h2>Tema</h2>
+                <select id="theme-select">
+                    <option value="light">Branco</option>
+                    <option value="dark">Preto</option>
+                </select>
+            </div>
+            <div class="config-card">
+                <h2>Editar Perfil</h2>
+                <button onclick="window.location.href='perfil.html'">Editar</button>
+            </div>
+            <div class="config-card">
+                <h2>Apagar Conta</h2>
+                <button id="delete-account-btn" class="danger">Apagar Conta</button>
+            </div>
         </div>
-    </footer>
-   
+    </main>
+
+<script src="JS/config.js"></script>
 
 </body>
 </html>

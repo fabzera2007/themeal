@@ -236,4 +236,15 @@ document.addEventListener('DOMContentLoaded', () => {
         loadUserMetrics();
     }
 
-}); // Fim do DOMContentLoaded
+}); 
+  
+  
+  // Aplica o tema salvo ao carregar a página
+  window.addEventListener('DOMContentLoaded', function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+          document.body.classList.add('dark-theme');
+      } else {
+          document.body.classList.remove('dark-theme');
+      }
+  });

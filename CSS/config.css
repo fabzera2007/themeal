@@ -10,4 +10,80 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+    padding-top: 100px;
+    background: #f6f8fa;
+}
+
+.config-options {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.config-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.config-card h2 {
+    margin-bottom: 18px;
+    color: #e63946;
+}
+
+.config-card select, .config-card button {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    margin-top: 8px;
+    cursor: pointer;
+    background: #f6f8fa;
+    transition: background 0.2s;
+}
+
+.config-card button.danger {
+    background: #e63946;
+    color: #fff;
+    border: none;
+    margin-top: 8px;
+}
+
+.config-card button.danger:hover {
+    background: #b71c1c;
+}
+
+body.dark-theme {
+    background: #222;
+    color: #eee;
+}
+body.dark-theme main {
+    background: #222;
+}
+body.dark-theme .config-card {
+    background: #333;
+    color: #eee;
+}
+body.dark-theme .config-card h2 {
+    color: #ffb4a2;
+}
+body.dark-theme .config-card select, 
+body.dark-theme .config-card button {
+    background: #444;
+    color: #fff;
+    border: 1px solid #555;
+}
+
 
